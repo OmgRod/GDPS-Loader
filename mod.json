@@ -1,0 +1,24 @@
+{
+	"geode": "3.2.0",
+	"gd": {
+		"win": "2.206",
+		"android": "2.206",
+		"mac": "2.206"
+	},
+	"version": "v1.0.0-alpha.1",
+	"id": "omgrod.rodgdps",
+	"name": "Rod GDPS",
+	"developers": ["OmgRod", "km7dev"],
+	"description": "Loads Rod GDPS instead of Geometry Dash.",
+	"tags": [
+		"online"
+	],
+	"early-load": true,
+	"dependencies": [
+		{
+			"id": "geode.node-ids",
+			"importance": "required",
+			"version": "1.13.1"
+		}
+	]
+}
