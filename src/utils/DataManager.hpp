@@ -2,12 +2,14 @@
 #include <Geode/loader/Event.hpp>
 #include <Geode/utils/web.hpp>
 
+#include "../ui/ServerSwitchLayer.hpp"
+
 using namespace geode::prelude;
 
 class DataManager
 {
 private:
-    std::string server = "https://www.boomlings.com/database/";
+    std::string server = "https://ksr.ps.fhgdps.com/";
 
     DataManager() {}
 
@@ -41,5 +43,8 @@ public:
     void initialize(std::string url)
     {
         server = url;
+        if (Mod::get()->getSavedValue("server") == "https://ksr.ps.fhgdps.com/") {
+            ServerSwitchLayer::onApply(nullptr);
+        }
     }
 };

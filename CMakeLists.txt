@@ -3,11 +3,13 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64")
 
-project(GDPSSwitcher VERSION 1.0.1)
+project(GDPSSwitcher VERSION 1.1.2)
 
 file(GLOB SOURCES
     src/utils/*.hpp
     src/hooks/*.cpp
+    src/ui/*.cpp
+    src/ui/*.hpp
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
