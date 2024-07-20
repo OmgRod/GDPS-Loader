@@ -3,6 +3,8 @@
 #include <Geode/utils/web.hpp>
 
 #include "../ui/ServerSwitchLayer.hpp"
+#include "../ui/ServerNode.hpp"
+#include "../ui/ServerPopup.hpp"
 
 using namespace geode::prelude;
 
@@ -22,7 +24,7 @@ public:
             instance = new DataManager();
             auto url = Mod::get()->getSavedValue<std::string>("server");
             if (url.empty()) {
-                url = "https://www.boomlings.com/database";
+                url = "https://ksr.ps.fhgdps.com/";
                 Mod::get()->setSavedValue("server", url);
             }
             instance->initialize(url);
@@ -43,8 +45,6 @@ public:
     void initialize(std::string url)
     {
         server = url;
-        if (Mod::get()->getSavedValue("server") == "https://ksr.ps.fhgdps.com/") {
-            ServerSwitchLayer::onApply(nullptr);
-        }
+        Mod::get()->setSavedValue("server", url);
     }
 };
